@@ -1,0 +1,82 @@
+Allan@Allan-PC MINGW64 ~/Projects (main)
+$ git checkout -b alterar-arquivo-java
+Switched to a new branch 'alterar-arquivo-java'
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git status
+On branch alterar-arquivo-java
+nothing to commit, working tree clean
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git branch
+* alterar-arquivo-java
+  incluir-arquivo-java
+  main
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git status
+On branch alterar-arquivo-java
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Main.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git difftool
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git add -A
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git status
+On branch alterar-arquivo-java
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Main.java
+
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git commit -m "Alteração de arquivo"
+[alterar-arquivo-java d7af0d4] Alteração de arquivo
+ 1 file changed, 1 insertion(+)
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git status
+On branch alterar-arquivo-java
+nothing to commit, working tree clean
+
+Allan@Allan-PC MINGW64 ~/Projects (alterar-arquivo-java)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Allan@Allan-PC MINGW64 ~/Projects (main)
+$ ls
+Main.java  README.md
+
+Allan@Allan-PC MINGW64 ~/Projects (main)
+$ git merge alterar-arquivo-java -m "Merge alteração de arquivo Java"
+Updating 68f8e9c..d7af0d4
+Fast-forward (no commit created; -m option ignored)
+ Main.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+Allan@Allan-PC MINGW64 ~/Projects (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 455 bytes | 455.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Allanrdias/Projects.git
+   68f8e9c..d7af0d4  main -> main
+
+Allan@Allan-PC MINGW64 ~/Projects (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
