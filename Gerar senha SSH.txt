@@ -1,0 +1,47 @@
+Para criar uma chave SSH no Git Bash, você pode seguir estes passos:
+
+Abra o Git Bash:
+
+Gere uma nova chave SSH:
+
+No Git Bash, digite o seguinte comando para gerar uma nova chave SSH. Substitua seu e-mail no final do comando pelo seu e-mail associado ao Git:
+
+ssh-keygen -t rsa -b 4096 -C "seuemail@example.com"
+
+Escolha o local para salvar a chave:
+
+O comando acima solicitará que você escolha um local para salvar a chave. Pressione Enter para aceitar o local padrão (/c/Users/SeuUsuario/.ssh/id_rsa).
+
+Digite uma senha opcional:
+
+Você será solicitado a fornecer uma senha para proteger sua chave privada. Se desejar, digite uma senha ou pressione Enter para continuar sem senha.
+Verifique se a chave foi criada:
+
+Para confirmar que a chave foi gerada, liste o conteúdo do diretório .ssh:
+
+ls ~/.ssh
+
+Você deve ver dois arquivos: id_rsa (chave privada) e id_rsa.pub (chave pública).
+
+Adicione a chave SSH ao seu agente SSH:
+
+Primeiro, inicie o agente SSH:
+
+eval "$(ssh-agent -s)"
+
+Adicione sua chave privada ao agente:
+
+ssh-add ~/.ssh/id_rsa
+
+Copie a chave pública:
+
+Para copiar a chave pública para adicionar ao GitHub, GitLab, ou outro serviço, use o seguinte comando:
+
+cat ~/.ssh/id_rsa.pub
+
+Copie o conteúdo exibido no terminal.
+
+Adicione a chave ao serviço Git (GitHub, GitLab, etc.):
+
+No GitHub, vá para as configurações de SSH e adicione uma nova chave SSH. Cole o conteúdo da chave pública copiado anteriormente.
+Depois de seguir esses passos, sua chave SSH estará configurada e você poderá usar autenticação SSH para interagir com seus repositórios Git.
